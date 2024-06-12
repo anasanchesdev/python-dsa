@@ -16,7 +16,7 @@ def sortedSquared(array):
                 temp = array[j]
                 array[j] = array[i]
                 array[i] = temp
-
+            print(array)
     return array
 
 
@@ -27,5 +27,9 @@ test_cases = (
     [0, 3, 3],          # 3 Passed
     [],                 # 4 Passed
 )
-arr = test_cases[2]
+arr = test_cases[0]
 print(sortedSquared(arr))
+
+
+# T = O(n²)
+# S = O(1)
