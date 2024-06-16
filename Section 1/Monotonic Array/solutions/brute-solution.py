@@ -2,10 +2,25 @@ def monotonicArray(array):
     length = len(array)
     if length == 0 or length == 1:
         return True
-    for index in range(length - 1):
-        if array[0] < array[-1] and not array[index] <= array[index + 1] or array[0] > array[-1] and not array[index] >= array[index + 1]:
-            return False
+    # NÃO-DECRESCENTE
+    if array[0] < array[-1]:
+        for index in range(length - 1):
+            if array[index] > array[index + 1]:
+                return False
+
+    # NÃO-CRESCENTE
+    elif array[0] > array[-1]:
+        for index in range(length - 1):
+            if array[index] < array[index + 1]:
+                return False
+    # TUDO IGUAL
+    else:
+        for index in range(length - 1):
+            if array[index] != array[index + 1]:
+                return False
+
     return True
+
 
 test_cases = (
     [1, 2, 3, 4],   # 0 Passed
@@ -18,4 +33,4 @@ test_cases = (
     [3, 1, 3, 1],   # 7 Passed
 )
 
-print(monotonicArray(test_cases[3]))
+print(monotonicArray(test_cases[1]))
