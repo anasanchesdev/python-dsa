@@ -32,7 +32,7 @@ def sortedSquared(array):
         if array[first] ** 2 > array[last] ** 2:
             new_array[index] = array[first] ** 2
             first += 1
-        elif array[last] ** 2 > array[first] ** 2:
+        else:
             new_array[index] = array[last] ** 2
             last -= 1
     return new_array
@@ -43,7 +43,7 @@ test_cases = (
     [0, 5, 6],          # 1 Passed
     [-4, -2, 0, 1, 3],  # 2 Passed
     [0, 3, 3],          # 3 Passed
-    [],                 # 4 Passed
+    [-7, -3, 2, 3, 11],                 # 4 Passed
 )
 arr = test_cases[4]
 print(sortedSquared(arr))
