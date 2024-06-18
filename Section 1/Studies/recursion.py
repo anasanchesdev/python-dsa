@@ -9,12 +9,16 @@
 #         return 1
 #     return function(n - 1) * n
 
-def function(n):
-    if n == 0:  # condição de término básica
-        return None
-    print(n)  # problema original
-    function(n - 1)  # problema secundário
-    print(n)  # problema original
+# def function(n):
+#     if n == 0:  # condição de término básica
+#         return None
+#     print(n)  # problema original
+#     function(n - 1)  # problema secundário
+#     print(n)  # problema original
 
+def function(n):
+    if n == 0:
+        return n
+    return n + function(n - 1)
 
 print(function(5))
